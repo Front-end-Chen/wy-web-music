@@ -10,4 +10,12 @@ export function getSongDetail(ids) {
   });
 }
 
-
+//获取歌词请求
+export function getLyric(id) {
+  return request({
+    url: "/lyric",
+    params: {
+      id
+    }
+  })
+}

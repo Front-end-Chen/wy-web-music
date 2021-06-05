@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import progress_bar from "@/assets/img/progress_bar.png"
-import sprite_icon from "@/assets/img/sprite_icon.png"
+import progress_bar from "@/assets/img/progress_bar.png";
+import sprite_icon from "@/assets/img/sprite_icon.png";
 
 export const PlaybarWrapper = styled.div`
   position: fixed;
@@ -22,35 +22,43 @@ export const PlaybarWrapper = styled.div`
     bottom: 0;
     height: 47px;
   }
-`
+`;
 
 export const Control = styled.div`
   display: flex;
   align-items: center;
 
-  .prev, .next {
+  .prev,
+  .next {
     width: 28px;
     height: 28px;
   }
 
   .prev {
     background-position: 0 -130px;
+    &:hover {
+      background-position: -30px -130px;
+    }
   }
 
   .play {
     width: 36px;
     height: 36px;
     margin: 0 8px;
-    background-position: 0 ${props => props.isPlaying ? "-165px": "-204px"};
+    background-position: 0 ${props => (props.isPlaying ? "-165px" : "-204px")};
     &:hover {
-        background-position: -40px ${props => props.isPlaying ? "-165px": "-204px"};
+      background-position: -40px
+        ${props => (props.isPlaying ? "-165px" : "-204px")};
     }
   }
 
   .next {
     background-position: -80px -130px;
+    &:hover {
+      background-position: -110px -130px;
+    }
   }
-`
+`;
 
 export const PlayInfo = styled.div`
   display: flex;
@@ -121,7 +129,7 @@ export const PlayInfo = styled.div`
       }
     }
   }
-`
+`;
 
 export const Operator = styled.div`
   display: flex;
@@ -142,31 +150,55 @@ export const Operator = styled.div`
     background-position: -114px -163px;
   }
 
+  .left {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+  }
+
   .right {
     width: 126px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
     padding-left: 13px;
     background-position: -147px -248px;
-    
+
     .volume {
       background-position: -2px -248px;
     }
 
     .loop {
       background-position: ${props => {
-        switch(props.sequence) {
+        switch (props.sequence) {
           case 1:
-            return "-66px -248px"
+            return "-66px -248px";
           case 2:
-            return "-66px -344px"
+            return "-66px -344px";
           default:
-            return "-3px -344px"
+            return "-3px -344px";
         }
       }};
+      &:hover {
+        background-position: ${props => {
+          switch (props.sequence) {
+            case 1:
+              return "-93px -248px";
+            case 2:
+              return "-93px -344px";
+            default:
+              return "-33px -344px";
+          }
+        }};
+      }
     }
 
     .playlist {
       width: 59px;
+      text-indent: 20px;
+      color: #ccc;
+      /* line-height: 25px; */
       background-position: -42px -68px;
     }
   }
-`
+`;

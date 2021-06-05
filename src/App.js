@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React, { memo, Suspense } from "react";
 import { HashRouter, Switch } from "react-router-dom";
 import { renderRoutes } from "react-router-config";
 import { Provider } from "react-redux";
@@ -14,7 +14,9 @@ export default memo(function App() {
     <Provider store={store}>
       <HashRouter>
         <WYAppHeader />
-        <Switch>{renderRoutes(routes)}</Switch>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Switch>{renderRoutes(routes)}</Switch>
+        </Suspense>
         <WYAppFooter />
         <AppPlayerBar />
       </HashRouter>
