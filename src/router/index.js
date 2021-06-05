@@ -8,6 +8,7 @@ import WYArtist from '../pages/discover/c-pages/artist'
 import WYRanking from '../pages/discover/c-pages/ranking'
 import WYDjradio from '../pages/discover/c-pages/djradio'
 import WYSongs from '../pages/discover/c-pages/songs'
+import WYPlayer from '../pages/player'
 
 import WYDiscover from "@/pages/discover";
 import WYMine from "@/pages/mine";
@@ -53,6 +54,10 @@ const routes = [
       {
         path: "/discover/album",
         component: WYAlbum,
+      },
+      {
+        path: "/discover/player",
+        component: WYPlayer,
       }
     ],
   },

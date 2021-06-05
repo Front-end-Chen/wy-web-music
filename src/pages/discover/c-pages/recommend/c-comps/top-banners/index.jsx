@@ -36,10 +36,7 @@ export default memo(function WYTopBanners() {
   //banner改变的回调函数, 保存当前图片索引
   //使用useCallback性能优化，返回
   const bannerChange = useCallback((from, to) => {
-    //让setCurIndex变为同步
-    setTimeout(() => {
       setCurIndex(to);
-    }, 0);
   }, []);
 
   //加上图片模糊的url参数, 用于动态设置banner大的背景图

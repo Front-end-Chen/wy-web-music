@@ -8,9 +8,12 @@ import {
 } from "./style";
 
 import TopBanners from "./c-comps/top-banners";
-import HotRecommend from './c-comps/hot-recommend';
-import NewAlbum from './c-comps/new-album';
-import RecomendRanking from './c-comps/recommend-ranking';
+import HotRecommend from "./c-comps/hot-recommend";
+import NewAlbum from "./c-comps/new-album";
+import RecomendRanking from "./c-comps/recommend-ranking";
+import UserLogin from "./c-comps/user-login";
+import SettleSinger from "./c-comps/settle-singer";
+import HotAnchor from "./c-comps/hot-anchor";
 
 export default memo(function WYRecommend() {
   return (
@@ -22,7 +25,11 @@ export default memo(function WYRecommend() {
           <NewAlbum />
           <RecomendRanking />
         </RecommendLeft>
-        <RecommendRight></RecommendRight>
+        <RecommendRight>
+          <UserLogin />
+          <SettleSinger />
+          <HotAnchor />
+        </RecommendRight>
       </Content>
     </RecommendWrapper>
   );

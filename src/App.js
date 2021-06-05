@@ -7,6 +7,7 @@ import routes from "./router";
 
 import WYAppHeader from "@/components/app-header";
 import WYAppFooter from "@/components/app-footer";
+import AppPlayerBar from "@/pages/player/app-player-bar";
 
 export default memo(function App() {
   return (
@@ -15,6 +16,7 @@ export default memo(function App() {
         <WYAppHeader />
         <Switch>{renderRoutes(routes)}</Switch>
         <WYAppFooter />
+        <AppPlayerBar />
       </HashRouter>
     </Provider>
   );
